@@ -4,17 +4,19 @@
 
 body {
   margin: 0;
-  background: #0d0d0d;
+  background: #0a0a0a;
+  background-image:
+    repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.015) 0px, rgba(255, 255, 255, 0.015) 1px, transparent 1px, transparent 2px);
   color: #c8c8c8;
   font-family: "Courier New", Courier, monospace;
   font-size: 15px;
-  line-height: 1.5;
+  line-height: 1.55;
 }
 
 .page {
   max-width: 720px;
   margin: 0 auto;
-  padding: 40px 20px 60px;
+  padding: 48px 20px 60px;
 }
 
 .ascii {
@@ -22,41 +24,106 @@ body {
   font-size: 11px;
   line-height: 1.15;
   overflow-x: auto;
-  margin: 0 0 10px;
+  margin: 0 0 14px;
+  text-shadow: 0 0 6px rgba(76, 175, 80, 0.35);
 }
 
 .tagline {
-  color: #9a9a9a;
+  color: #b8b8b8;
+  margin: 0 0 10px;
+}
+
+.honest-note {
+  color: #7d7d7d;
+  font-size: 13px;
+  font-style: italic;
+  border-left: 2px solid #333;
+  padding-left: 10px;
   margin: 0 0 20px;
 }
 
 hr {
   border: none;
-  border-top: 1px dashed #444;
-  margin: 24px 0;
+  border-top: 1px dashed #3a3a3a;
+  margin: 26px 0;
 }
 
 h2 {
   color: #4caf50;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: normal;
+  letter-spacing: 0.5px;
   margin: 0 0 10px;
+  text-transform: lowercase;
+}
+
+/* fake terminal window chrome, reused for command blocks + screenshots */
+.dots {
+  display: inline-flex;
+  gap: 6px;
+  margin-right: 10px;
+}
+
+.dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  display: inline-block;
+  background: #444;
+}
+
+.dot-r {
+  background: #5c4444;
+}
+
+.dot-y {
+  background: #5c5644;
+}
+
+.dot-g {
+  background: #445c47;
+}
+
+.term-title {
+  color: #666;
+  font-size: 11px;
+}
+
+.term,
+.shot {
+  border: 1px solid #2e2e2e;
+  background: #121212;
+  margin-bottom: 10px;
+}
+
+.term-bar,
+.shot-bar {
+  display: flex;
+  align-items: center;
+  padding: 6px 10px;
+  background: #181818;
+  border-bottom: 1px solid #2a2a2a;
+}
+
+.term-body {
+  padding: 10px 12px;
 }
 
 .cmdline {
   display: flex;
   align-items: center;
   gap: 8px;
-  background: #161616;
-  border: 1px solid #333;
-  padding: 8px 10px;
-  margin-bottom: 10px;
   overflow-x: auto;
   white-space: nowrap;
 }
 
+.cmdline:not(:last-child) {
+  margin-bottom: 8px;
+}
+
 .prompt {
   color: #4caf50;
+  flex-shrink: 0;
 }
 
 .cmdline code {
@@ -66,13 +133,14 @@ h2 {
 }
 
 .copy-btn {
-  background: #1f1f1f;
-  color: #9a9a9a;
-  border: 1px solid #444;
+  background: #1e1e1e;
+  color: #8a8a8a;
+  border: 1px solid #3a3a3a;
   font-family: inherit;
-  font-size: 12px;
-  padding: 3px 8px;
+  font-size: 11px;
+  padding: 3px 9px;
   cursor: pointer;
+  flex-shrink: 0;
 }
 
 .copy-btn:hover {
@@ -83,26 +151,62 @@ h2 {
 .note {
   color: #777;
   font-size: 13px;
-  margin: 0 0 20px;
+  margin: 0 0 22px;
 }
 
 ul {
-  margin: 0 0 20px;
+  margin: 0 0 22px;
   padding-left: 18px;
 }
 
 ul li {
   margin-bottom: 4px;
-  color: #c8c8c8;
+  color: #c0c0c0;
+}
+
+.shots {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+.shot {
+  flex: 1 1 260px;
+  min-width: 0;
+}
+
+.shot img {
+  display: block;
+  width: 100%;
+  height: auto;
+  filter: saturate(0.9) contrast(1.02);
+}
+
+.links {
+  text-align: center;
 }
 
 .links a {
   color: #6cb6ff;
-  text-decoration: underline;
+  text-decoration: none;
+  border-bottom: 1px dashed #35495c;
+  font-size: 13px;
+}
+
+.links a:hover {
+  border-bottom-style: solid;
 }
 
 .footer {
-  color: #555;
-  font-size: 12px;
+  color: #4d4d4d;
+  font-size: 11px;
+  text-align: center;
   margin-top: 30px;
+}
+
+@media (max-width: 560px) {
+  .shots {
+    flex-direction: column;
+  }
 }
