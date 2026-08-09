@@ -1,0 +1,108 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #0d0d0d;
+  color: #c8c8c8;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.page {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 40px 20px 60px;
+}
+
+.ascii {
+  color: #4caf50;
+  font-size: 11px;
+  line-height: 1.15;
+  overflow-x: auto;
+  margin: 0 0 10px;
+}
+
+.tagline {
+  color: #9a9a9a;
+  margin: 0 0 20px;
+}
+
+hr {
+  border: none;
+  border-top: 1px dashed #444;
+  margin: 24px 0;
+}
+
+h2 {
+  color: #4caf50;
+  font-size: 15px;
+  font-weight: normal;
+  margin: 0 0 10px;
+}
+
+.cmdline {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #161616;
+  border: 1px solid #333;
+  padding: 8px 10px;
+  margin-bottom: 10px;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.prompt {
+  color: #4caf50;
+}
+
+.cmdline code {
+  color: #ddd;
+  flex: 1;
+  font-family: inherit;
+}
+
+.copy-btn {
+  background: #1f1f1f;
+  color: #9a9a9a;
+  border: 1px solid #444;
+  font-family: inherit;
+  font-size: 12px;
+  padding: 3px 8px;
+  cursor: pointer;
+}
+
+.copy-btn:hover {
+  color: #eee;
+  border-color: #666;
+}
+
+.note {
+  color: #777;
+  font-size: 13px;
+  margin: 0 0 20px;
+}
+
+ul {
+  margin: 0 0 20px;
+  padding-left: 18px;
+}
+
+ul li {
+  margin-bottom: 4px;
+  color: #c8c8c8;
+}
+
+.links a {
+  color: #6cb6ff;
+  text-decoration: underline;
+}
+
+.footer {
+  color: #555;
+  font-size: 12px;
+  margin-top: 30px;
+}
